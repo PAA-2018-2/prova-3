@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{pdfsync}
+\usepackage[all]{xy}
+\usepackage{color}
+
+\newcommand{\resposta}[1]{ \noindent {\bf Solução}.{\color{blue} #1}}
+
+\title{{\large Universidade de Brasília \\ Instituto de Ciências Exatas \\
+Departamento de Ciência da Computação} \\[1cm]
+CIC 117536 - Projeto e Análise de Algoritmos \\[.5cm]  Terceira Prova \\[.5cm] Turma: B}
+\author{{\bf NP-completude}}
+\date{Prof. Flávio L. C. de Moura \\[.5cm] \today}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item {\bf (2.5 pontos)} O problema 2-SAT tem como instâncias as
+  fórmulas lógicas formadas por conjunções de disjunções de até dois
+  literais, onde um literal é uma variável booleana ou a negação de
+  uma variável booleana. Por exemplo, a expressão a seguir é uma
+  instância de 2-SAT:
+
+  $$(x_1\lor \neg x_2)\land (\neg x_1 \lor \neg x_3) \land (x_1 \lor x_2) \land x_3$$
+
+  Prove que 2-SAT $\in$ P.
+
+ 
+  \resposta{
+    Escreva aqui sua solução.
+  }
+  
+\item {\bf (2.5 pontos)} Em aula, assumimos que SAT é um problema
+  NP-completo (Teorema de Cook-Levin), e a partir deste fato mostramos
+  que 3-SAT e CLIQUE também são problemas NP-completos. As reduções
+  foram feitas de acordo com o seguinte diagrama:
+
+  $$\xymatrix{
+    SAT \ar[d] \\
+    3\mbox{-}SAT \ar[d] \\
+    CLIQUE 
+  }$$
+  
+  Um ciclo Hamiltoniano é um ciclo simple que visita cada vértice de
+  um grafo exatamente uma vez. Considere o problema de decisão
+  HAM-CYCLE que pergunta se um dado grafo (não-dirigido) $G$ possui um
+  ciclo Hamiltoniano. Mostre que HAM-CYCLE é um problema
+  NP-completo. Sua solução deve ser construída a partir de SAT, 3-SAT
+  ou CLIQUE. Caso, você não veja como reduzir diretamente HAM-CYCLE a
+  partir destes, mas sabe como fazê-lo a partir de um certo problema
+  $Q$ então inicialmente mostre que $Q$ é NP-completo a partir de SAT,
+  3-SAT ou CLIQUE, e assim por diante. Digamos que você não saiba como
+  mostrar que $Q$ é NP-completo diretamente a partir de SAT, 3-SAT ou
+  CLIQUE, mas você sabe como fazê-lo a partir de outro problema $Q'$,
+  e também sabe como mostrar que $Q'$ é NP-completo a partir de 3-SAT,
+  por exemplo. Então o diagrama correspondente à sua solução seria:
+
+$$\xymatrix{
+  SAT \ar[d] & & & \\
+  3\mbox{-}SAT \ar[d]\ar[r] & Q' \ar[r] & Q \ar[r] & \mbox{HAM-CYCLE}  \\
+  CLIQUE & & & 
+}$$
+
+E todas as reduções (de 3-SAT para $Q'$, de $Q'$ para $Q$ e de $Q$ para HAM-CYCLE) devem ser detalhadas na sua solução.
+
+\resposta{
+    Escreva aqui sua solução.
+  }
+  
+\item {\bf (2.5 pontos)} Considere o seguinte jogo em um grafo
+  (não-dirigido) $G$, que inicialmente contém 0 ou mais bolas de gude
+  em seus vértices: um movimento deste jogo consiste em remover duas
+  bolas de gude de um vértice $v\in G$, e adicionar uma bola a algum
+  vértice adjacente de $v$. Agora, considere o seguinte problema: Dado
+  um grafo $G$, e uma função $p(v)$ que retorna o número de bolas de
+  gude no vértice $v$, existe uma sequência de movimentos que remove
+  todas as bolas de $G$, exceto uma? Mostre que este problema é
+  NP-completo. A mesma observação feita no exercício anterior vale
+  aqui: a prova deve ser feita a partir de problemas que provamos
+  serem NP-completos, e reduções intermediárias, caso existam, devem
+  ser incluídas na solução.
+
+  \resposta{
+    Escreva aqui sua solução.
+  }
+  
+\item {\bf (2.5 pontos)} Uma fórmula booleana em {\it forma normal conjuntiva com disjunção exclusiva (FNCX)} é uma conjunção de diversas cláusulas, e cada cláusula é uma disjunção exclusiva (XOR) de diversos literais. Lembre-se que a disjunção exclusiva é dada por:
+
+  $$\begin{array}{|l|l|l|}\hline
+      a & b & a \oplus b \\ \hline
+      V & V & F \\ \hline
+      V & F & V \\ \hline
+      F & V & V \\ \hline
+      F & F & F \\ \hline
+  \end{array}$$
+
+  O problema FNCX-SAT pergunta se uma dada fórmula em FNCX é
+  satisfatível. Mostre que o problema FNCX-SAT está em $P$, ou então
+  que FNCX-SAT é NP-completo. No último caso, a mesma observação feita
+  nos dois exercícios anteriores vale aqui: a prova deve ser feita a
+  partir de problemas que provamos serem NP-completos, e reduções
+  intermediárias, caso existam, devem ser incluídas na solução.
+
+  \resposta{
+    Escreva aqui sua solução.
+  }
+\end{enumerate}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
